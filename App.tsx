@@ -5,6 +5,7 @@ import BackgroundCheckScreen from './src/screens/BackgroundCheckScreen'
 import QuestionnaireScreen from './src/screens/QuestionnaireScreen'
 import ProfileScreen from './src/screens/ProfileScreen'
 import VideoScreen from './src/screens/VideoScreen'
+import ConfirmationScreen from './src/screens/ConfirmationScreen'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { NavigationContainer } from '@react-navigation/native'
 
@@ -47,6 +48,14 @@ function ThemedVideoScreen({ navigation }) {
   )
 }
 
+function ThemedConfirmationScreen({ navigation }) {
+  return (
+    <Theme name="light">
+      <ConfirmationScreen navigation={navigation} />
+    </Theme>
+  )
+}
+
 export default function App() {
   return (
     <TamaguiProvider config={config}>
@@ -58,6 +67,7 @@ export default function App() {
             <Stack.Screen name="Questionnaire" component={ThemedQuestionnaireScreen} />
             <Stack.Screen name="Profile" component={ThemedProfileScreen} />
             <Stack.Screen name="Video" component={ThemedVideoScreen} />
+            <Stack.Screen name="Confirmation" component={ThemedConfirmationScreen} />
           </Stack.Navigator>
         </NavigationContainer>
       </Theme>
